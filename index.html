@@ -3,33 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Details</title>
+    <title>Car Showroom</title>
 
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f6f9;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 50px auto;
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #eef1f5;
+        }
+
+        /* HEADER */
+        .header {
+            height: 60px;
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        /* MAIN LAYOUT */
+        .main {
+            display: flex;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 230px;
+            height: calc(100vh - 60px);
+            background: #1e293b;
+            padding-top: 20px;
+        }
+
+        .sidebar h3 {
+            color: #9ca3af;
+            padding: 10px 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #e5e7eb;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-left: 4px solid transparent;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #334155;
+            border-left: 4px solid #38bdf8;
+            color: #fff;
+        }
+
+        /* CONTENT */
+        .content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .card {
             background: #fff;
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             overflow: hidden;
         }
 
-        .header {
-            background: #111;
-            color: #fff;
-            padding: 20px 30px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .content {
+        .car-section {
             display: flex;
             flex-wrap: wrap;
         }
@@ -51,42 +101,60 @@
         }
 
         .car-details h2 {
-            margin-top: 0;
-            color: #333;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        .car-details p {
+            color: #6b7280;
+            line-height: 1.6;
         }
 
         .price {
             font-size: 28px;
-            color: #27ae60;
-            margin: 15px 0;
+            color: #16a34a;
+            margin: 20px 0;
             font-weight: bold;
         }
 
         .features {
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
 
         .features li {
             margin-bottom: 8px;
-            color: #555;
+            color: #374151;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 20px;
-            background: #007bff;
+            padding: 12px 22px;
+            background: #0ea5e9;
             color: #fff;
             text-decoration: none;
             border-radius: 6px;
+            font-weight: 500;
             transition: 0.3s;
         }
 
         .btn:hover {
-            background: #0056b3;
+            background: #0284c7;
         }
 
+        /* MOBILE */
         @media (max-width: 768px) {
-            .content {
+            .main {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .car-section {
                 flex-direction: column;
             }
         }
@@ -95,30 +163,57 @@
 
 <body>
 
-<div class="container">
+<!-- HEADER -->
+<div class="header">
+    <center>
+    🚗 Elite Car Showroom
+    </center>
+</div>
 
-    <div class="header">
-        Premium Car Showroom
+<div class="main">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h3>Navigation</h3>
+        <a href="#">🏠 Home</a>
+        <a href="#">🚘 Cars</a>
+        <a href="#">ℹ️ About</a>
+        <a href="#">📞 Contact</a>
     </div>
 
+    <!-- CONTENT -->
     <div class="content">
 
-        <div class="car-image">
-            <img src="car.png" alt="Car Image">
-        </div>
+        <div class="card">
 
-        <div class="car-details">
-            <h2>Luxury Sedan 2025</h2>
-            <div class="price">₹15,99,000</div>
+            <div class="car-section">
 
-            <ul class="features">
-                <li>✔️ 2.0L Turbo Engine</li>
-                <li>✔️ Automatic Transmission</li>
-                <li>✔️ Sunroof & Leather Seats</li>
-                <li>✔️ Advanced Safety Features</li>
-            </ul>
+                <div class="car-image">
+                    <img src="car.png" alt="Car">
+                </div>
 
-            <a href="#" class="btn">Book Now</a>
+                <div class="car-details">
+                    <h2>Luxury Sedan 2025</h2>
+
+                    <p>
+                        A perfect blend of performance, comfort, and cutting-edge technology.
+                        Built for those who demand excellence in every drive.
+                    </p>
+
+                    <div class="price">₹15,99,000</div>
+
+                    <ul class="features">
+                        <li>✔️ Turbocharged Engine</li>
+                        <li>✔️ Automatic Gearbox</li>
+                        <li>✔️ Premium Interiors</li>
+                        <li>✔️ Smart Infotainment</li>
+                    </ul>
+
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
