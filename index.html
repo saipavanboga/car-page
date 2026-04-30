@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #111;
+            color: #fff;
+            padding: 20px 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .car-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .car-details {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .car-details h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .price {
+            font-size: 28px;
+            color: #27ae60;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .features {
+            margin: 20px 0;
+        }
+
+        .features li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        Premium Car Showroom
+    </div>
+
+    <div class="content">
+
+        <div class="car-image">
+            <img src="car.png" alt="Car Image">
+        </div>
+
+        <div class="car-details">
+            <h2>Luxury Sedan 2025</h2>
+
+            <p>
+                Experience ultimate comfort and performance with this premium luxury sedan.
+                Designed with cutting-edge technology and superior safety features.
+            </p>
+
+            <div class="price">₹15,99,000</div>
+
+            <ul class="features">
+                <li>✔️ 2.0L Turbo Engine</li>
+                <li>✔️ Automatic Transmission</li>
+                <li>✔️ Sunroof & Leather Seats</li>
+                <li>✔️ Advanced Safety Features</li>
+            </ul>
+
+            <a href="#" class="btn">Book Now</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
